@@ -19,3 +19,5 @@ class TestLoto:
         assert len(game.user) == 2
         game.users_clear()
         assert len(game.user) == 0
+
+#123
