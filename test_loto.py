@@ -21,3 +21,4 @@ class TestLoto:
         assert len(game.user) == 0
 
 #123
+#123
