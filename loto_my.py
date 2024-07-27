@@ -2,6 +2,7 @@
 import random
 class game_loto():
     def __init__(self):
+        self.name="Игра лото"
         self.user = []
         self.game_numbers = []
         self.game_succes=False
@@ -50,7 +51,11 @@ class game_loto():
                 print(f"Победил пользователь {self.user[i].user_name}")
                 self.game_succes=True
 
+    def __str__(self):
+        return f"{self.name}, игроки \nСтатус игры {self.game_succes}"
 
+    def __eq__(self, other):
+        return self.name == other.name
 
 
 class user_game:
@@ -74,18 +79,30 @@ class user_game:
         except:
             pass
 
+    def __str__(self):
+        return f"{self.user_name}"
+
+    def __eq__(self, other):
+        return self.user_name == other.user_name
+
 
 def main():
     user_one = user_game()
     user_one.user_name_set('Pupa')
-
+    print(user_one)
     user_two = user_game()
     user_two.user_name_set('Lupa')
 
+    print(user_one == user_two)
+
     game=game_loto()
+    game2 = game_loto()
+
     game.user_add(user_one)
     game.user_add(user_two)
     game.users_check()
+    print(game)
+    print(game==game)
     #game.users_card_view()
-    game.start()
+    #game.start()
 main()

@@ -20,5 +20,25 @@ class TestLoto:
         game.users_clear()
         assert len(game.user) == 0
 
+    def test_magic_game(self):
+        #TODO КЛАССЫ
+        game =game_loto()
+        game_two=game_loto()
+
+        user = user_game()
+        user_two = user_game()
+        user_two.user_name_set("123")
+
+        game_two.user_add(user)
+
+        ser=game==game
+        assert ser == True
+        ser = game == game_two
+        assert ser == False
+        ser = user == user
+        assert ser == True
+        ser = user == user_two
+        assert ser == False
+
 #123
 #123
